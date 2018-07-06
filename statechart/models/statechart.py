@@ -40,7 +40,7 @@ class Statechart(models.Model):
     _sql_constraint = [
         ('unique_name',
          'unique(name)',
-         u'Statechart name must be unique')
+         'Statechart name must be unique')
     ]
 
     @api.depends('yaml')
