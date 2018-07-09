@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 Camptocamp
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+  <record model="ir.ui.view" id="display_state_form_view">
+    <field name="name">statechart.display_state.form</field>
+    <field name="model">statechart.display_state</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group name="main">
+            <field name="name"/>
+            <field name="description"/>
+            <field name="key" placeholder="Enter a unique key"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="display_state_tree_view">
+    <field name="name">statechart.display_state.tree</field>
+    <field name="model">statechart.display_state</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="key"/>
+      </tree>
+    </field>
+  </record>
+
+  <record model="ir.actions.act_window" id="display_state_act_window">
+    <field name="name">Display states</field>
+    <field name="res_model">statechart.display_state</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="context">{}</field>
+  </record>
+
+  <menuitem
+    id="menu_statechart_display_state"
+    name="Display states"
+    parent="statechart.menu_statechart_root"
+    action="display_state_act_window"
+    groups="base.group_no_one"
+    />
+
+
+</odoo>
