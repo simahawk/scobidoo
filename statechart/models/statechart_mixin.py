@@ -304,11 +304,12 @@ class StatechartMixin(models.AbstractModel):
         #     _sc_patch(self.env[parent])
         self._add_inherited_fields()
 
-        # in v9 this method does everything needed for the
-        # additional non-stored computed fields we have added,
-        # and does nothing on existing fields
-        # (it has been invoked in registry.setup_models before)
-        self._setup_fields(False)
+        # TODO: v11 MIG still needed?
+        # # in v9 this method does everything needed for the
+        # # additional non-stored computed fields we have added,
+        # # and does nothing on existing fields
+        # # (it has been invoked in registry.setup_models before)
+        self._setup_fields()
 
     @api.model_cr
     def _register_hook(self):
